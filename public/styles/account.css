@@ -1,0 +1,108 @@
+.account-cover{
+    background: url("/../images/login-background.png") center;
+    background-size: cover;
+    padding-top: 20px;
+}
+.account{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+.account .account-info{
+    width: 100%;
+    display: flex;
+}
+.account .account-info .first, .account .account-info .second{
+    width: 50%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+}
+.account .account-info .first{
+    justify-content: right;
+}
+.account .account-info .second{
+    justify-content: center;
+}
+.account .signin{
+    width: 100%;
+}
+.account .signin .logo,.account .signin .foot{
+    margin: 2rem 0;
+}
+.account .signin .logo .second-logo{
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.account .signin .signin-form{
+    width: 80%;
+    margin: 2rem auto 1rem;
+}
+.account .signin .signin-form input{
+    padding: 1rem;
+    margin: 0.5rem 0;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+p.reset-header{
+    font-size: 1.3rem;
+    width: 80%;
+    margin: 2rem auto;
+}
+.account .signin .signin-form button{
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    background-color: rgb(105, 105, 239);
+    color: white;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+.account .signin .signin-form button .btn-spin{
+    height: 2rem;
+    width: 2rem;
+    display: none;
+}
+.account .signin p a{
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.2rem;
+}
+.account .signin p{
+    text-align: center;
+    color: #a9a9a9;
+}
+
+.account .signin .foot{
+    padding: 2rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.account .signin .foot p{
+    color: black;
+    margin: 0;
+    font-size: 1.3rem;
+}
+.account .signin .foot p a{
+    font-size: inherit;
+    color: rgb(91, 91, 234);
+}
+
+@media screen and (max-width: 992px) {
+    .account .account-info .first{
+        display: none;
+    }.account .account-info .second{
+        width: 100%;
+    }
+    .account .signin .signin-form, .account .signin .foot{
+        width: 100%;
+    }
+    .account .signin .logo .second-logo{
+        display: flex;        
+    }
+}

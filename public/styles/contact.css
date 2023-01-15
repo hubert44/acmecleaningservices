@@ -1,0 +1,97 @@
+.contact-cover{
+    background: url("/../images/login-background.png") center;
+    background-size: cover;
+}
+.contactt{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.contactt .contact-content{
+    width: 100%;
+}
+.contactt header h2{
+    text-align: center;
+    font-weight: bold;
+}
+.contactt header p{
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin: 1rem 2rem;
+}
+.contactt .contact-content .contact-details{
+    margin-top: 2rem;
+}
+.contactt .contact-content .contact-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contactt .contact-content .contact-col .contact-form{
+    width: 80%;
+    margin: 2rem;
+}
+.contactt .contact-content .contact-col .contact-info{
+    margin: 2rem;
+}
+.contactt .contact-content .contact-col .contact-form input, .contactt .contact-content .contact-col .contact-form textarea{
+    padding: 1rem;
+    margin: 0.5rem 0;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 500;
+    font-family: "Quicksand", sans-serif;
+}
+.contactt .contact-content .contact-col .contact-form button{
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    background-color: rgb(105, 105, 239);
+    color: white;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+.contactt .contact-content .contact-col .contact-form button .btn-spin{
+    height: 2rem;
+    width: 2rem;
+    display: none;
+}
+.contactt .contact-content .contact-col .contact-info p{
+    font-size: 1.4rem;
+}
+.contactt .contact-content .contact-col .contact-info p.contact-intro{
+    line-height: 2;
+}
+.contactt .contact-content .contact-col .contact-info a{
+    text-decoration: none;
+    color: black;
+}
+.contactt .contact-content .contact-col .contact-info .locate{
+    margin: 3rem 0 0;
+}
+.contactt .contact-content .contact-col .contact-info .locate .locate-info{
+    margin: 2rem 0;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+@media screen and (max-width: 992px) {
+    .contact-cover{
+        padding: 10rem 0 0;
+        box-sizing: border-box;
+    }
+    .contactt{
+        min-height: inherit;
+    }
+    .contactt .contact-content .contact-col .contact-form, .contactt .contact-content .contact-col .contact-info{
+        width: 100%;
+    }
+}

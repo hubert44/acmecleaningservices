@@ -1,0 +1,90 @@
+<%- include('../includes/head.ejs') %>
+
+    <div id="maintop" class="book-cover">
+        <div class="book-block">
+            <div class="containerr">
+                <header>
+                    <h2>BOOK US TODAY</h2>
+                </header>
+                <div class="row">
+                  <div class="col col-12 col-md-4">
+                    <p style="margin-bottom: 0;">Select cleaning service <i class="fas fa-asterisk" style="font-size: 7px;color: red;"></i></p>
+                    <select class="border" name="cleaningService">
+                        <option value="Residential cleaning">Residential cleaning</option>
+                        <option value="Fumigation cleaning">Fumigation</option>
+                        <option value="Upholstery / Rugs cleaning">Upholstery / Rugs cleaning</option>
+                        <option value="Post-Construction cleaning">Post-Construction cleaning</option>
+                        <option value="Garden cleaning">Garden cleaning</option>
+                        <option value="Swimming pool cleaning">Swimming pool cleaning</option>
+                    </select>
+                  </div>
+                  <div class="col col-12 col-md-4">
+                    <p style="margin-bottom: 0;">Select cleaning type <i class="fas fa-asterisk" style="font-size: 7px;color: red;"></i></p>
+                    <select class="border" name="cleaningType">
+                        <option value="Basis cleaning">Basis cleaning</option>
+                        <option value="Deep cleaning">Deep cleaning</option>
+                        <option value="Odor fumigation">Odor fumigation</option>
+                        <option value="Odorless fumigation">Odorless fumigation</option>
+                    </select>
+                  </div>
+                  <div class="col col-12 col-md-4">
+                    <p style="margin-bottom: 0;">Select type of apartment <i class="fas fa-asterisk" style="font-size: 7px;color: red;"></i></p>
+                    <select class="border" name="apartmentType">
+                        <option value="Mini flat / one bedroom">Mini flat / one bedroom</option>
+                        <option value="Two bedroom">Two bedroom</option>
+                        <option value="Three bedroom">Three bedroom</option>
+                        <option value="Four bedrooms">Four bedrooms</option>
+                        <option value="Three bedroom duplex">Three bedroom duplex</option>
+                        <option value="Four bedroom duplex">Four bedroom duplex</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col col-12 col-md-4">
+                        <p style="margin-bottom: 0;">Pick a date <i class="fas fa-asterisk" style="font-size: 7px;color: red;"></i></p>
+                        <input type="datetime-local" class="border" placeholder="Pick a date" name="cleaningDate">
+                    </div>
+                    <div class="col col-12 col-md-4">
+                        <p style="margin-bottom: 0;">Phone number <i class="fas fa-asterisk" style="font-size: 7px;color: red;"></i></p>
+                        <input type="text" class="border borderr" placeholder="+234 123 456 7890" name="number">
+                    </div>
+                    <div class="col col-12 col-md-4">
+                        <p style="margin-bottom: 0;">Select service frequency <i class="fas fa-asterisk" style="font-size: 7px;color: red;"></i></p>
+                        <select class="border" name="serviceFrequency">
+                            <option value="Once">Once</option>
+                            <option value="Weekly">Weekly</option>
+                            <option value="Monthly">Monthly</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-12 col-md-4">
+                        <p style="margin-bottom: 0;">Select state <i class="fas fa-asterisk" style="font-size: 7px;color: red;"></i></p>
+                        <select class="border" name="serviceState">
+                            <option value="Lagos">Lagos</option>
+                            <option disabled value="Abuja">Abuja</option>
+                        </select>
+                    </div>
+                    <div class="col col-12 col-md-8">
+                        <p style="margin-bottom: 0;">Enter address <i class="fas fa-asterisk" style="font-size: 7px;color: red;"></i></p>
+                        <input type="text" class="border borderr" placeholder="Location address" name="serviceLocation">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-12">
+                        <p style="margin-bottom: 0;">Enter additional notes</p>
+                        <textarea name="notes" placeholder="Notes" style="resize: none; font-size: 1.38rem;" class="border borderr" rows="3" name="notes"></textarea>
+                    </div>
+                </div>
+                <div class="sub-btn">
+                    <button type="button" onclick="book(this); this.disabled=true;">
+                        <span class="btn-spin spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        <span class="btn-text">BOOK</span>
+                    </button>
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                </div>
+            </div>
+        </div>
+    </div>  
+    
+<%- include('../includes/foot.ejs') %>

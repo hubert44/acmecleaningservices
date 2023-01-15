@@ -1,0 +1,84 @@
+.book-cover{
+    background: url("/../images/login-background.png") center;
+    background-size: cover;
+}
+.book-block{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.book-block header{
+    margin-bottom: 3rem;
+}
+.book-block header h2{
+    text-align: center;
+    font-weight: bold;
+}
+.book-block .row{
+    margin: 1rem 0;
+}
+.book-block .row .col{
+    margin-bottom: 1rem;
+}
+.book-block input , .book-block select, .book-block textarea{
+    padding: 1rem;
+    margin: 0.5rem 0;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 500;
+    font-family: "Quicksand", sans-serif;
+}
+.book-block select, .book-block input[type=datetime-local]{
+    height: 4rem;
+    width: 100%;
+    color: #000000;
+    border-radius: 0;
+}
+
+.book-block select:hover{
+    cursor: pointer;
+}
+.book-block .sub-btn{
+    display: flex;
+    justify-content: center;
+    padding: 0 15px;
+}
+.book-block .sub-btn button .btn-spin{
+    height: 2rem;
+    width: 2rem;
+    display: none;
+}
+.book-block button{
+    width: 30%;
+    border: none;
+    padding: 1rem;
+    background-color: hsl(174, 63%, 40%);
+    color: white;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+@media screen and (max-width: 767px) {
+    .book-block .row{
+        margin: 0;
+    }
+    .book-block button{
+        width: 100%;
+    }
+    .book-cover{
+        padding: 10rem 0 3rem;
+        box-sizing: border-box;
+    }
+    .book-block{
+        min-height: inherit;
+    }
+}

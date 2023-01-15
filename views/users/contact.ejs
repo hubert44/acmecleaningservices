@@ -1,0 +1,53 @@
+<%- include('../includes/head.ejs') %>
+
+    <div id="maintop" class="contact-cover">
+        <div class="contactt containerr">
+            <div class="contact-content">
+                <header>
+                    <h2>CONTACT US TODAY</h2>
+                    <p>We look forward to working with you, reach out for more information.</p>
+                </header>
+                <div class="contact-details">
+                    <div class="row">
+                        <div class="contact-col col-12 col-lg-6">
+                            <div class="contact-form">
+                                <input type="text" name="username" class="border" placeholder="Name" required>
+                                <input type="text" name="phonenumber" class="border" placeholder="Phone number" required>
+                                <input type="email" name="email" class="border" placeholder="Email" required>
+                                <input type="text" name="subject" class="border" placeholder="Subject" required>
+                                <textarea name="message" placeholder="Message" style="resize: none; font-size: 1.38rem;" class="border" rows="3"></textarea>
+                                <button type="button" onclick="contact(this); this.disabled=true;">
+                                    <span class="btn-spin spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                    <span class="btn-text">Submit</span>
+                                </button>
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            </div>
+                        </div>
+                        <div id="contact-us" class="contact-col col-12 col-lg-6">
+                            <div class="contact-info">
+                                <p class="contact-intro">We provide you with all your cleaning products and cleaning equipment needs
+                                    to keep your premises and working environment up to the highest standards of appearance and cleanliness.
+                                </p>
+                                <div class="locate">
+                                    <div class="locate-info">
+                                        <h2>Location</h2>
+                                        <p>Plot 263 Etim Inyang Cresent, Victoria Island, Lagos</p>
+                                    </div>
+                                    <div class="locate-info">
+                                        <h2>Call us</h2>
+                                        <p>Tel: +234 (0)7062904039</p>
+                                    </div>
+                                    <div class="locate-info">
+                                        <h2>E-mail</h2>
+                                        <p><a href="mailto:adannaonuoha@gmail.com">adannaonuoha@gmail.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<%- include('../includes/foot.ejs') %>

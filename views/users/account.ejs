@@ -1,0 +1,106 @@
+<%- include('../includes/head.ejs') %>
+    <div id="maintop" class="wrapper">
+        <div class="containeer">
+          <p class="intro">Hello, <span><%= name.split(" ")[0] %></span></p>
+          <div class="faq-group">
+            <div class="faq-row">
+              <div class="faq-row wrap-collapsible">
+                <input class="toggle" type="checkbox" id="collapsible" checked="checked"/>
+                <label class="label-toggle" for="collapsible">MY BOOKINGS</label>
+                <div class="collapsible-content">
+                  <div class="content-inner">
+                    <div class="booking-cards">
+                      <% if(bookings.length > 0){ %>
+                        <% for(let booking of bookings){ %>
+                        <div class="booking-card">
+                          <div class="booking-card__header">
+                            <div class="booking-card__header-meta">
+                              <div class="booking-card__header-meta-calendar"><i class="fa fa-calendar icon"></i></div>
+                            </div>
+                            <div class="booking-card__header-status <%= booking.bookStatus %>"><%= booking.bookStatus %></div>
+                          </div>
+                          <div class="booking-card__body">
+                            <div class="booking-card__body-date">
+                              <div class="booking-card__body-date-day"><%= booking.cleaningDate.slice(8, 10) %></div>
+                              <div class="booking-card__body-date-month"><%= months[parseInt(booking.cleaningDate.slice(5, 7))-1] %></div>
+                            </div>
+                            <div class="booking-card__body-details">
+                              <div class="booking-card__body-details-date"><%= booking.cleaningDate.slice(11, 13) %>:<%= booking.cleaningDate.slice(13, 15) %></div>
+                              <div class="booking-card__body-details-facility"><%= booking.cleaningService %></div>
+                              <div class="booking-card__body-details-platform"><%= booking.cleaningType %></div>
+                            </div>
+                          </div>
+                          <div class="booking-card__specialties"><span><%= booking.apartmentType %></span></div>
+                          <div class="booking-card__footer">
+                            <div class="booking-card__footer-date"><i class="fa fa-calendar icon"> </i><span><%= booking.createdAt.toString().slice(0, 15) %></span></div>
+                            <div class="booking-card__footer-author"><%= booking.serviceFrequency %></span></div>
+                          </div>
+                        </div>
+                        <% } %>
+                      <% }else{ %>
+                        <div class="empty-booking">
+                          <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_dxbjlr1q.json"  background="transparent"  speed="1"  
+                          style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+                        </div>
+                      <% } %>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="faq-row">
+              <div class="wrap-collapsible">
+                <input class="toggle" type="checkbox" id="collapsible-2"/>
+                <label class="label-toggle" for="collapsible-2">MY DETAILS</label>
+                <div class="collapsible-content">
+                  <div class="content-inner">
+                    <p>Update or edit any of your details below so your account details would be up to date.</p>
+                    <div id="update-form" class="info-form">
+                        <div class="info-form-input">
+                            <label for="name">NAME:</label>
+                            <input type="text" name="username" id="name" value="<%= name %>" class="borderr">
+                        </div>
+                        <div class="info-form-input">
+                            <label for="email">EMAIL:</label>
+                            <input type="email" name="email" id="email" value="<%= email %>" class="borderr">
+                        </div>
+                        <button id="update-but" type="button" onclick="updateInfo(this); this.disabled=true;" disabled>
+                          <span class="btn-spin spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                          <span class="btn-text">UPDATE</span>
+                        </button>
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="faq-row">
+              <div class="wrap-collapsible">
+                <input class="toggle" type="checkbox" id="collapsible-3"/>
+                <label class="label-toggle" for="collapsible-3">CHANGE PASSWORD</label>
+                <div class="collapsible-content">
+                    <div class="content-inner">
+                        <p>Update or edit your account password.</p>
+                        <div class="info-form">
+                            <div class="info-form-input">
+                                <label for="cuPassword">CURRENT PASSWORD:</label>
+                                <input type="password" id="cuPassword" name="cuPassword" class="borderr">
+                            </div>
+                            <div class="info-form-input">
+                                <label for="newPassword">NEW PASSWORD:</label>
+                                <input type="password" id="newPassword" name="newPassword" class="borderr">
+                            </div>
+                            <button type="button" onclick="updatePass(this); this.disabled=true;">
+                              <span class="btn-spin spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                              <span class="btn-text">UPDATE</span>
+                            </button>
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<%- include('../includes/foot.ejs') %>

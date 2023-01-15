@@ -1,0 +1,35 @@
+{
+  "name": "acmetest",
+  "version": "1.0.0",
+  "description": "acme website",
+  "main": "app.js",
+  "engines": {
+    "node": "18.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Gygane",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "compression": "^1.7.4",
+    "connect-mongodb-session": "^3.1.1",
+    "csurf": "^1.11.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-graphql": "^0.12.0",
+    "express-session": "^1.17.3",
+    "graphql": "^15.8.0",
+    "helmet": "^4.6.0",
+    "mongoose": "^6.4.4",
+    "nodemailer": "^6.7.7",
+    "nodemailer-sendgrid": "^1.0.3",
+    "validator": "^13.7.0"
+  }
+}

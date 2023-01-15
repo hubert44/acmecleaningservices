@@ -40,15 +40,15 @@ app.use(session({
     store: store
 }));
 app.use(csrf());
-// app.disable('x-powered-by');
-// app.enable("trust proxy");
-// app.use((req, res, next) => {
-//     if (req.secure) {
-//         next();
-//     } else {
-//         res.redirect('https://' + req.headers.host + req.url);
-//     }
-// });
+app.disable('x-powered-by');
+app.enable("trust proxy");
+app.use((req, res, next) => {
+    if (req.secure) {
+        next();
+    } else {
+        res.redirect('https://' + req.headers.host + req.url);
+    }
+});
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {

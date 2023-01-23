@@ -92,7 +92,7 @@ module.exports = {
                         <h3>Hi ${username.split(" ")[0]},</h3>
                         <p style="color: grey;">Please ignore you did not create an account or request for a verification link</p>
                         <p style="margin: 1rem 0;">Click on the button below to verify your account</p>
-                        <p style="margin: 2rem 0;"><a href="https://www.acmecleaningservices.org/login/${veryCode}" target="_blank" style="box-sizing: border-box;
+                        <p style="margin: 2rem 0;"><a href="${process.env.BASE_URL}/login/${veryCode}" target="_blank" style="box-sizing: border-box;
                         border-color: #348eda; font-weight: 400; text-decoration: none; display: inline-block; margin: 0; color: #ffffff; background-color: #348eda; border: solid 1px #348eda; border-radius: 2px; 
                         cursor: pointer; font-size: 14px; padding: 12px 45px;">Verify Account</a></p>
                         <p style="margin: 1rem 0;">ACME</p>
@@ -203,7 +203,7 @@ module.exports = {
                             <h3>Hi ${loggedUser.name.split(" ")[0]},</h3>
                             <p style="color: grey;">Please ignore you are not requested to verify your account</p>
                             <p style="margin: 1rem 0;">Click on the button below to verify your account</p>
-                            <p style="margin: 2rem 0;"><a href="https://www.acmecleaningservices.org/login/${veryCode}" target="_blank" style="box-sizing: border-box;
+                            <p style="margin: 2rem 0;"><a href="${process.env.BASE_URL}/login/${veryCode}" target="_blank" style="box-sizing: border-box;
                             border-color: #348eda; font-weight: 400; text-decoration: none; display: inline-block; margin: 0; color: #ffffff; background-color: #348eda; border: solid 1px #348eda; border-radius: 2px; 
                             cursor: pointer; font-size: 14px; padding: 12px 45px;">Verify Account</a></p>
                             <p style="margin: 1rem 0;">ACME</p>
@@ -298,7 +298,7 @@ module.exports = {
                         <h3>Hi ${user.name.split(" ")[0]},</h3>
                         <p style="color: grey;">Please ignore if you did not request for password reset</p>
                         <p style="margin: 1rem 0;">Click on the button below to reset your password</p>
-                        <p style="margin: 2rem 0;"><a href="https://www.acmecleaningservices.org/resetpassword/${token}" target="_blank" style="box-sizing: border-box;
+                        <p style="margin: 2rem 0;"><a href="${process.env.BASE_URL}/resetpassword/${token}" target="_blank" style="box-sizing: border-box;
                         border-color: #348eda; font-weight: 400; text-decoration: none; display: inline-block; margin: 0; color: #ffffff; background-color: #348eda; border: solid 1px #348eda; border-radius: 2px; 
                         cursor: pointer; font-size: 14px; padding: 12px 45px;">Reset Password</a></p>
                         <p style="margin: 1rem 0;">ACME</p>

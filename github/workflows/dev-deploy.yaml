@@ -1,0 +1,15 @@
+name: Deploy dev
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Generate deployment package
+        run: zip -r deploy.zip . -x '*.git*'

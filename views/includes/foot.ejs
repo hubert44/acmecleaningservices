@@ -39,5 +39,39 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
 <script src="/scripts/cdnjs/sweetalert2.all.min.js"></script>
 <script src="/scripts/scripts.js"></script>
+<script>
+  function handleTokenQueryParam() {
+    //need login and signup fe urls
+    //fe need to handle removal of query parameters
+    const queryParams = new URLSearchParams(window.location.search);
+    if (queryParams.has('code')) {
+        // Get the value of the token query parameter
+        const code = queryParams.get('code');
+        fetch('http://localhost:8080/api/v1/auth/google/register', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({code})
+        })
+        .then(res => {
+            return res.json();
+        })
+        .then(resData => {
+            const newUrl = window.location.origin + window.location.pathname;
+            history.replaceState(null, '', newUrl);
+            if(resData.error){
+                throw resData;
+            }
+            console.log(resData);
+        })
+        .catch(err => {
+            console.log(err)
+        });
+    }
+}
+window.addEventListener('DOMContentLoaded', handleTokenQueryParam);
+</script>
+
 </body>
 </html>
